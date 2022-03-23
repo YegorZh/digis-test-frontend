@@ -7,6 +7,7 @@
   <li>TypeScript</li>
   <li>Webpack</li>
   <li>React</li>
+  <li>CSS Reset</li>
  </ol>
 
 <h2>Scripts</h2>
