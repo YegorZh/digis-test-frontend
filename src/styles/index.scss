@@ -1,0 +1,9 @@
+@import './reset';
+$body-color: blue;
+
+
+h1 {
+    text-align: center;
+    color: $body-color;
+    font-size: 64px;
+}
