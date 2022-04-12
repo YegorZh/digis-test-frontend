@@ -9,6 +9,8 @@
   <li>React</li>
   <li>Sass</li>
   <li>CSS Reset</li>
+  <li>Tailwind</li>
+  <li>Prettier</li>
  </ol>
 
 <h2>Scripts</h2>
