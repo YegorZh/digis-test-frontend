@@ -1,4 +1,5 @@
 ﻿# Simple React App Template
+
  <h2>How to use this template?</h2>
  Use this template by typing "git init" followed by "git pull https://github.com/YegorZh/SimpleReactAppTemplate main" in desired folder.
  
@@ -8,7 +9,6 @@
   <li>Webpack</li>
   <li>React</li>
   <li>Sass</li>
-  <li>CSS Reset</li>
   <li>Tailwind</li>
   <li>Prettier</li>
  </ol>
