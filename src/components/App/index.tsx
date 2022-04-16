@@ -1,18 +1,23 @@
+import { Box } from '@mui/material';
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import BookDetails from '../BookDetails';
-import Home from '../Home';
-import Library from '../Library';
+import BookDetails from '../pages/BookDetails';
+import Home from '../pages/Home';
+import Library from '../pages/Library';
+import Navbar from '../structure/Navbar';
 
 const App: React.FC = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/library" element={<Library />} />
-        <Route path="/book-details/:id" element={<BookDetails />} />
-      </Routes>
-    </BrowserRouter>
+    <Box minHeight="100vh" display="flex" sx={{ flexDirection: 'column' }}>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/library" element={<Library />} />
+          <Route path="/book-details/:id" element={<BookDetails />} />
+        </Routes>
+      </BrowserRouter>
+    </Box>
   );
 };
 
