@@ -9,7 +9,7 @@ const Navbar: React.FC = () => {
   ];
   return (
     <AppBar position="static">
-      <Box sx={{ flexGrow: 1, display: 'flex', px: '16px' }}>
+      <Box sx={{ flexGrow: 1, display: 'flex', px: '40px' }}>
         {pages.map((page) => (
           <Button
             key={page.name}
