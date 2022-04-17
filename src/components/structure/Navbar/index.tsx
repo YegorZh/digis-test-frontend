@@ -12,10 +12,12 @@ const Navbar: React.FC = () => {
       <Box sx={{ flexGrow: 1, display: 'flex', px: '40px' }}>
         {pages.map((page) => (
           <Button
+            component={NavLink}
+            to={page.link}
             key={page.name}
             sx={{ my: 2, color: 'white', display: 'block' }}
           >
-            <NavLink to={page.link}>{page.name}</NavLink>
+            {page.name}
           </Button>
         ))}
       </Box>

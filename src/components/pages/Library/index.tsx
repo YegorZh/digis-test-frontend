@@ -7,7 +7,7 @@ import BookCard from './BookCard';
 
 const Library: React.FC = () => {
   const dispatcher = useAppDispatch();
-  const booksData = useAppSelector((state) => state.booksDataSlice.data);
+  const booksData = useAppSelector((state) => state.booksData.data);
 
   useEffect(() => {
     axios

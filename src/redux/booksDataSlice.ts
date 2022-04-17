@@ -18,7 +18,7 @@ export interface BooksDataState {
 const initialState: BooksDataState = {};
 
 export const booksDataSlice = createSlice({
-  name: 'counter',
+  name: 'booksData',
   initialState,
   reducers: {
     setBooksData: (state, action: PayloadAction<IBooksData[]>) => {
