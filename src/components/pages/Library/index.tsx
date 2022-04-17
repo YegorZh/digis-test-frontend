@@ -1,8 +1,23 @@
-import { Box, Grid } from '@mui/material';
-import React from 'react';
+import { Grid } from '@mui/material';
+import axios, { AxiosError } from 'axios';
+import React, { useEffect } from 'react';
+import { IBooksData, setBooksData } from '../../../redux/booksDataSlice';
+import { useAppDispatch, useAppSelector } from '../../../redux/hooks';
 import BookCard from './BookCard';
 
 const Library: React.FC = () => {
+  const dispatcher = useAppDispatch();
+  const booksData = useAppSelector((state) => state.booksDataSlice.data);
+
+  useEffect(() => {
+    axios
+      .get('https://digis-test.herokuapp.com/books')
+      .then((res) => {
+        dispatcher(setBooksData(res.data));
+      })
+      .catch((err: Error | AxiosError) => alert(err));
+  }, []);
+
   return (
     <Grid
       sx={{ px: '48px', pt: '24px' }}
@@ -10,9 +25,9 @@ const Library: React.FC = () => {
       spacing={3}
       justifyContent="center"
     >
-      {[...Array(10)].map((_, index) => (
+      {booksData?.map((bookData, index) => (
         <Grid key={index} item>
-          <BookCard />
+          <BookCard bookData={bookData} />
         </Grid>
       ))}
     </Grid>

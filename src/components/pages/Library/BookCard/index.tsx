@@ -6,14 +6,15 @@ import {
   CardContent,
   Typography,
 } from '@mui/material';
-import React from 'react';
+import React, { useEffect } from 'react';
+import { IBooksData } from '../../../../redux/booksDataSlice';
 
-const BookCard: React.FC = () => {
+const BookCard: React.FC<{ bookData: IBooksData }> = ({ bookData }) => {
   return (
     <Card
       sx={{
         minWidth: {
-          sm: 275,
+          xs: 275,
           md: 400,
         },
         maxWidth: 'fit-content',
@@ -28,14 +29,16 @@ const BookCard: React.FC = () => {
       >
         <CardContent>
           <Typography variant="h5" component="div">
-            The Shadow Over Insmouth
+            {bookData.title}
           </Typography>
           <Typography sx={{ mb: 1.5 }} color="text.secondary">
-            Howard Lovecraft
+            {bookData.author}
           </Typography>
-          <Typography variant="body2">Genre: Horror</Typography>
-          <Typography variant="body2">Published: 1941</Typography>
-          <Typography variant="body2">Pages: ?</Typography>
+          <Typography variant="body2">Genre: {bookData.genre}</Typography>
+          <Typography variant="body2">
+            Published: {bookData.published}
+          </Typography>
+          <Typography variant="body2">Pages: {bookData.pages}</Typography>
         </CardContent>
         <CardActions>
           <Button size="small">MORE INFO</Button>
@@ -44,7 +47,7 @@ const BookCard: React.FC = () => {
       <Box
         flex="0.75"
         sx={{
-          display: 'flex',
+          display: { xs: 'none', md: 'flex' },
           alignItems: 'center',
           py: '16px',
           mx: '24px',
@@ -52,10 +55,11 @@ const BookCard: React.FC = () => {
       >
         <Box
           width="100%"
-          height="100%"
+          maxHeight="250px"
           component="img"
-          sx={{ objectFit: 'cover' }}
-          src="https://picsum.photos/2000/2000"
+          sx={{ objectFit: 'cover', borderRadius: 1 }}
+          src={bookData.image}
+          alt={`Image for ${bookData.title}`}
         />
       </Box>
     </Card>
