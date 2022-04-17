@@ -7,6 +7,7 @@ import {
   Typography,
 } from '@mui/material';
 import React, { useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 import { IBooksData } from '../../../../redux/booksDataSlice';
 
 const BookCard: React.FC<{ bookData: IBooksData }> = ({ bookData }) => {
@@ -41,7 +42,9 @@ const BookCard: React.FC<{ bookData: IBooksData }> = ({ bookData }) => {
           <Typography variant="body2">Pages: {bookData.pages}</Typography>
         </CardContent>
         <CardActions>
-          <Button size="small">MORE INFO</Button>
+          <Button size="small">
+            <NavLink to={`/library/book/${bookData._id}`}>MORE INFO</NavLink>
+          </Button>
         </CardActions>
       </Box>
       <Box
