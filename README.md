@@ -8,4 +8,4 @@
 <p>Builds app to docs</p>
 <hr>
 <h4>P.S.</h4>
-<p>Backend can be found here <a href="https://github.com/YegorZh/digis-test-backend">https://github.com/YegorZh/digis-test-backend</a></p>
+<p>Backend can be found <a href="https://github.com/YegorZh/digis-test-backend">here</a></p>
