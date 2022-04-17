@@ -8,7 +8,7 @@ module.exports = {
   entry: './src/index.tsx',
   output: {
     path: __dirname + '/docs/',
-    publicPath: prod ? 'https://yegorzh.github.io/digis-test-frontend/' : '/',
+    publicPath: 'auto',
   },
   devServer: {
     historyApiFallback: true,

@@ -9,7 +9,7 @@ import Navbar from '../structure/Navbar';
 const App: React.FC = () => {
   return (
     <Box minHeight="100vh" display="flex" sx={{ flexDirection: 'column' }}>
-      <HashRouter basename="/">
+      <HashRouter>
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
