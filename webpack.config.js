@@ -3,12 +3,13 @@ const prod = process.env.NODE_ENV === 'production';
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+const path = prod ? 'https://yegorzh.github.io/digis-test-frontend/' : '/';
 module.exports = {
   mode: prod ? 'production' : 'development',
   entry: './src/index.tsx',
   output: {
     path: __dirname + '/docs/',
-    publicPath: '/',
+    publicPath: path,
   },
   devServer: {
     historyApiFallback: true,
