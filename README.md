@@ -1,4 +1,4 @@
-﻿# Simple React App Template
+﻿# Digital Suits Test Frontend
 
 <h2>Scripts</h2>
 <h3>npm start</h3>
