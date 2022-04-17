@@ -52523,7 +52523,8 @@ const BookDetails = () => {
             .then((res) => dispatcher((0,_redux_bookDetailsSlice__WEBPACK_IMPORTED_MODULE_2__.setBookDetails)(res.data)))
             .catch((err) => alert(err));
     }, []);
-    return (react__WEBPACK_IMPORTED_MODULE_1__.createElement(_mui_material__WEBPACK_IMPORTED_MODULE_5__["default"], { display: "flex", gap: "24px", sx: {
+    const isRightBook = bookData?._id === id;
+    return (react__WEBPACK_IMPORTED_MODULE_1__.createElement(_mui_material__WEBPACK_IMPORTED_MODULE_5__["default"], null, isRightBook && (react__WEBPACK_IMPORTED_MODULE_1__.createElement(_mui_material__WEBPACK_IMPORTED_MODULE_5__["default"], { display: "flex", gap: "24px", sx: {
             px: '48px',
             py: '16px',
             height: 'fit-content',
@@ -52552,7 +52553,7 @@ const BookDetails = () => {
                     maxWidth: '100%',
                     objectFit: 'contain',
                     borderRadius: 2,
-                }, alt: "Book image" }))));
+                }, alt: "Book image" }))))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (BookDetails);
 

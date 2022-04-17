@@ -15,51 +15,56 @@ const BookDetails: React.FC = () => {
       .then((res) => dispatcher(setBookDetails(res.data)))
       .catch((err) => alert(err));
   }, []);
+  const isRightBook = bookData?._id === id;
   return (
-    <Box
-      display="flex"
-      gap="24px"
-      sx={{
-        px: '48px',
-        py: '16px',
-        height: 'fit-content',
-        flexDirection: { xs: 'column', md: 'row' },
-      }}
-    >
-      <Box maxWidth="500px">
-        <Typography variant="h3">{bookData?.title}</Typography>
-        <Typography sx={{ mb: 1.5 }} color="text.secondary">
-          {bookData?.author}
-        </Typography>
-        <Typography variant="body2">Genre: {bookData?.genre}</Typography>
-        <Typography variant="body2">
-          Published: {bookData?.published}
-        </Typography>
-        <Typography variant="body2" sx={{ mb: 1.5 }}>
-          Pages: {bookData?.pages}
-        </Typography>
-        <Box>
-          <Typography variant="h4">Description</Typography>
-          <Typography>{bookData?.shortDescription} </Typography>
-        </Box>
-      </Box>
-      <Box
-        display="flex"
-        width="100%"
-        sx={{ justifyContent: { xs: 'flex-start' } }}
-      >
+    <Box>
+      {isRightBook && (
         <Box
-          component="img"
-          src={bookData?.image}
+          display="flex"
+          gap="24px"
           sx={{
-            maxHeight: '400px',
-            maxWidth: '100%',
-            objectFit: 'contain',
-            borderRadius: 2,
+            px: '48px',
+            py: '16px',
+            height: 'fit-content',
+            flexDirection: { xs: 'column', md: 'row' },
           }}
-          alt="Book image"
-        />
-      </Box>
+        >
+          <Box maxWidth="500px">
+            <Typography variant="h3">{bookData?.title}</Typography>
+            <Typography sx={{ mb: 1.5 }} color="text.secondary">
+              {bookData?.author}
+            </Typography>
+            <Typography variant="body2">Genre: {bookData?.genre}</Typography>
+            <Typography variant="body2">
+              Published: {bookData?.published}
+            </Typography>
+            <Typography variant="body2" sx={{ mb: 1.5 }}>
+              Pages: {bookData?.pages}
+            </Typography>
+            <Box>
+              <Typography variant="h4">Description</Typography>
+              <Typography>{bookData?.shortDescription} </Typography>
+            </Box>
+          </Box>
+          <Box
+            display="flex"
+            width="100%"
+            sx={{ justifyContent: { xs: 'flex-start' } }}
+          >
+            <Box
+              component="img"
+              src={bookData?.image}
+              sx={{
+                maxHeight: '400px',
+                maxWidth: '100%',
+                objectFit: 'contain',
+                borderRadius: 2,
+              }}
+              alt="Book image"
+            />
+          </Box>
+        </Box>
+      )}
     </Box>
   );
 };
