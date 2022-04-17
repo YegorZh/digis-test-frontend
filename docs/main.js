@@ -52477,7 +52477,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const App = () => {
     return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_mui_material__WEBPACK_IMPORTED_MODULE_5__["default"], { minHeight: "100vh", display: "flex", sx: { flexDirection: 'column' } },
-        react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.BrowserRouter, null,
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.HashRouter, { basename: "/" },
             react__WEBPACK_IMPORTED_MODULE_0__.createElement(_structure_Navbar__WEBPACK_IMPORTED_MODULE_4__["default"], null),
             react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Routes, null,
                 react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Route, { path: "/", element: react__WEBPACK_IMPORTED_MODULE_0__.createElement(_pages_Home__WEBPACK_IMPORTED_MODULE_2__["default"], null) }),
